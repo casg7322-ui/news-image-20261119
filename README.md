@@ -4,9 +4,9 @@
 [![rank](https://make.fun/badge/news-image-20261119/casg7322-ui/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/casg7322-ui/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 
-A one-page newspaper front page — "The World in One Day: 19 November 2026" — drawn from scratch in code. Hero story: GTA VI begins its global rollout after a 13-year wait. Also inside: the US–Iran exchange of fire, Hakeem Jeffries set to become the first African-American Speaker of the US House, Cyclone Akvan nearing India, Jensen Huang resigning at Nvidia, the Trump–Xi–Putin trilateral at APEC in Shenzhen, and Voyager 1 nearing a light-day from Earth. Plus the day's other headlines in the ticker: the EU's €45-billion Ukraine loan, Pew's report on Islam becoming the world's largest religion by 2035, and Fed minutes pointing to further rate hikes.
+A one-page newspaper front page — "The World in One Day: 19 November 2026" — drawn from scratch in code. 40 verified Thursday stories: three heroes (the Trump–Xi–Putin trilateral at APEC in Shenzhen, GTA VI's global release after a 13-year wait, Anthropic's record $81.3bn IPO), ten illustrated story cards, a numbered world map, 27 one-line briefs, and a DATE CHECK strip that keeps Wednesday's news off the page.
 
-`main.ts` (Node 22, standard library only) draws the whole page — masthead, sunset Vice City illustration, six story panels with pictograms, and the ticker — into a deterministic 1024×1024 PNG. No network, no fonts, no image libraries: a 5×7 bitmap font and a hand-rolled PNG encoder live in the file, so both grader runs write the same bytes.
+`main.ts` (Node 22, standard library only) draws the whole page — masthead, region bar, stats strip, hero and card illustrations, map, briefs, and date check — into a deterministic 1024×1024 PNG. No network, no fonts, no image libraries: a 5×7 bitmap font, a vector stroke serif, and a hand-rolled PNG encoder live in the code, so both grader runs write the same bytes.
 
 ## Run it
 
