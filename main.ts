@@ -251,7 +251,6 @@ function main(): void {
   const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(`${outDir}/entry.png`, png);
-  fs.writeFileSync("entry.png", png);
   console.log(`wrote ${outDir}/entry.png (${png.length} bytes)`);
 }
 
