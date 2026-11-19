@@ -6,7 +6,7 @@
 
 A one-page newspaper front page — "The World in One Day: 19 November 2026" — with real typography. 40 verified Thursday stories: three heroes (the Trump–Xi–Putin trilateral at APEC in Shenzhen, GTA VI's global release after a 13-year wait, Anthropic's record $81.3bn IPO), ten illustrated story cards, a numbered world map, 27 one-line briefs, and a DATE CHECK strip that keeps Wednesday's news off the page.
 
-The page is `page.html` (HTML/CSS, hand-written layout, inline SVG illustrations and map), rendered to `entry.png` with headless Chromium (`render.sh`) using open-licensed fonts from `fonts/` — Gloock for the masthead, Lora for headlines and body, Instrument Sans for kickers, labels, and figures. The render is deterministic: repeated runs produce byte-identical PNGs. `main.ts` (Node 22, standard library only) copies `entry.png` to the output directory — the pattern the competition's own starter uses — and writes nothing anywhere else.
+The page is `page.html` (HTML/CSS, hand-written layout, inline SVG illustrations and map), rendered to `entry.png` with headless Chromium (`render.sh`) using open-licensed fonts — Gloock for the masthead, Lora for headlines and body, Instrument Sans for kickers, labels, and figures. The fonts are a build dependency, not vendored here: they come from the canvas-design skill (anthropics/skills, OFL). To re-render, place the three families in a `fonts/` directory next to `page.html` and run `./render.sh`. The render is deterministic: repeated runs produce byte-identical PNGs. `main.ts` (Node 22, standard library only) copies `entry.png` to the output directory — the pattern the competition's own starter uses — and writes nothing anywhere else.
 
 ## Run it
 
@@ -16,7 +16,7 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
 This writes `out/entry.png` (1024×1024, 305,511 bytes).
 
-To re-render the image from the source: `./render.sh` (needs headless Chromium).
+To re-render the image from the source: place the fonts (Gloock, Lora, Instrument Sans — OFL, from the canvas-design skill) in `fonts/` and run `./render.sh` (needs headless Chromium).
 
 ---
 
