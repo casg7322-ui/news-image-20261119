@@ -4,9 +4,9 @@
 [![rank](https://make.fun/badge/news-image-20261119/casg7322-ui/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/casg7322-ui/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 
-A one-page newspaper front page — "The World in One Day: 19 November 2026" — drawn from scratch in code. 40 verified Thursday stories: three heroes (the Trump–Xi–Putin trilateral at APEC in Shenzhen, GTA VI's global release after a 13-year wait, Anthropic's record $81.3bn IPO), ten illustrated story cards, a numbered world map, 27 one-line briefs, and a DATE CHECK strip that keeps Wednesday's news off the page.
+A one-page newspaper front page — "The World in One Day: 19 November 2026" — with real typography. 40 verified Thursday stories: three heroes (the Trump–Xi–Putin trilateral at APEC in Shenzhen, GTA VI's global release after a 13-year wait, Anthropic's record $81.3bn IPO), ten illustrated story cards, a numbered world map, 27 one-line briefs, and a DATE CHECK strip that keeps Wednesday's news off the page.
 
-`main.ts` (Node 22, standard library only) draws the whole page — masthead, region bar, stats strip, hero and card illustrations, map, briefs, and date check — into a deterministic 1024×1024 PNG. No network, no fonts, no image libraries: a 5×7 bitmap font, a vector stroke serif, and a hand-rolled PNG encoder live in the code, so both grader runs write the same bytes.
+The page is `page.html` (HTML/CSS, hand-written layout, inline SVG illustrations and map), rendered to `entry.png` with headless Chromium (`render.sh`) using open-licensed fonts from `fonts/` — Gloock for the masthead, Lora for headlines and body, Instrument Sans for kickers, labels, and figures. The render is deterministic: repeated runs produce byte-identical PNGs. `main.ts` (Node 22, standard library only) copies `entry.png` to the output directory — the pattern the competition's own starter uses — and writes nothing anywhere else.
 
 ## Run it
 
@@ -14,7 +14,9 @@ A one-page newspaper front page — "The World in One Day: 19 November 2026" —
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-This writes `out/entry.png` (1024×1024, under 1 MiB).
+This writes `out/entry.png` (1024×1024, 305,511 bytes).
+
+To re-render the image from the source: `./render.sh` (needs headless Chromium).
 
 ---
 
